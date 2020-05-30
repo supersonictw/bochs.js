@@ -403,7 +403,7 @@ int default_image_t::open(const char* _pathname, int flags)
   if ((fd = hdimage_open_file(pathname, flags, &hd_size, &mtime)) < 0) {
     return -1;
   }
-  BX_INFO(("hd_size: "FMT_LL"u", hd_size));
+  BX_INFO(("hd_size: " FMT_LL "u", hd_size));
   if (hd_size <= 0) BX_PANIC(("size of disk image not detected / invalid"));
   if ((hd_size % 512) != 0) BX_PANIC(("size of disk image must be multiple of 512 bytes"));
   return fd;
